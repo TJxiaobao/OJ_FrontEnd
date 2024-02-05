@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-OJ's front-end engineering code
-=======
 # oj_front_end
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -30,4 +27,3 @@ npm run dev
 ```sh
 npm run build
 ```
->>>>>>> 12c7d59 (vue frist commit)

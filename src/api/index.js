@@ -85,6 +85,7 @@ function internalGet(url, headers, success, failure, error = defaultError) {
     .catch((err) => error(err));
 }
 
+// 账号登录
 function login(username, password, success, failure = defaultFailure) {
   internalPost(
     "/user/login",
@@ -104,7 +105,47 @@ function login(username, password, success, failure = defaultFailure) {
     failure
   );
 }
+// 手机号登录
+function loginPhone(phone, code, success, failure = defaultFailure) {
+  internalPost(
+    "/user/login_sms",
+    {
+      phone: phone,
+      code: code,
+    },
+    // {
+    //   "Content-Type": "application/x-www-form-urlencoded",
+    // },
+    (data) => {
+      console.log("111", data);
+      storeAccessToken(data.data.token);
+      ElMessage.success(`登录成功，欢迎来到我们的系统`);
+      success(data);
+    },
+    failure
+  );
+}
 
+// 邮箱登录
+function loginEmail(email, code, success, failure = defaultFailure) {
+  internalPost(
+    "/user/login/email",
+    {
+      email: email,
+      code: code,
+    },
+    // {
+    //   "Content-Type": "application/x-www-form-urlencoded",
+    // },
+    (data) => {
+      console.log("111", data);
+      storeAccessToken(data.data.token);
+      ElMessage.success(`登录成功，欢迎来到我们的系统`);
+      success(data);
+    },
+    failure
+  );
+}
 function post(url, data, success, failure = defaultFailure) {
   internalPost(url, data, accessHeader(), success, failure);
 }
@@ -117,4 +158,4 @@ function unauthorized() {
   return !takeAccessToken();
 }
 
-export { post, get, login, unauthorized };
+export { post, get, login, loginPhone, loginEmail, unauthorized };

@@ -15,7 +15,12 @@
 <style lang="less" scoped>
 .right-card {
   width: 400px;
-  z-index: 1;
+  // z-index: 1;
+  // box-sizing: border-box;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  margin: 10px 400px;
   background-color: var(--el-bg-color);
 }
 

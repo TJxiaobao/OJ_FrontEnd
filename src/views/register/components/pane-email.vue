@@ -182,7 +182,7 @@ const handleRegisterEmail = () => {
 // 获取验证码
 const validateEmail = () => {
   coldTime.value = 60;
-  post("/user/send_code", { email: form.email }, () => {
+  post("/user/send_code_email", { email: form.email }, () => {
     ElMessage.success(`验证码已发送到手机短信: ${form.email}，请注意查收`);
     const handle = setInterval(() => {
       coldTime.value--;

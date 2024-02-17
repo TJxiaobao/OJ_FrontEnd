@@ -12,7 +12,7 @@
           <template #label>
             <div class="label">
               <el-icon><Iphone /></el-icon>
-              <span class="text">手机号登录</span>
+              <span class="text">手机号注册</span>
             </div>
           </template>
           <pane-phone ref="phoneRef"></pane-phone>
@@ -21,7 +21,7 @@
           <template #label>
             <div class="label">
               <el-icon><Message /></el-icon>
-              <span class="text">邮箱登录</span>
+              <span class="text">邮箱注册</span>
             </div>
           </template>
           <pane-email ref="emailRef"></pane-email>
